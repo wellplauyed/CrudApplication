@@ -1,0 +1,15 @@
+<div class="property-listings-container">
+    <h2>Property Listings</h2>
+    <ul class="property-list">
+        <li *ngFor="let property of properties" class="property-item">
+            <h3 class="property-title">{{ property.title }}</h3>
+            <p class="property-description">{{ property.description }}</p>
+            <p class="property-price">Price: {{ property.price | currency }}</p>
+            <p class="property-location">Location: {{ property.location }}</p>
+            <div class="button-group">
+                <button (click)="deleteProperty(property.id)" class="delete-button">Delete</button>
+                <button routerLink="/edit/{{ property.id }}" class="edit-button">Edit</button>
+            </div>
+        </li>
+    </ul>
+</div>

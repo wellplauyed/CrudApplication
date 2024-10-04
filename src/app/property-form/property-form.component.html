@@ -1,0 +1,22 @@
+<div class="property-form-container">
+    <h2>{{ isEdit ? 'Edit Property' : 'Add Property' }}</h2>
+    <form (ngSubmit)="save()" class="property-form">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input id="title" type="text" [(ngModel)]="property.title" name="title" required />
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" [(ngModel)]="property.description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input id="price" type="number" [(ngModel)]="property.price" name="price" required />
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input id="location" type="text" [(ngModel)]="property.location" name="location" required />
+        </div>
+        <button type="submit" class="submit-button">{{ isEdit ? 'Update' : 'Add' }} Property</button>
+    </form>
+</div>
